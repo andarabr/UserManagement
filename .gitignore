@@ -1,0 +1,4 @@
+/.vs/UserManagement/v14/*.suo
+/UserManagement/obj/Debug/*.cache
+/UserManagement/bin/Debug/UserManagement.exe.config
+/UserManagement/bin/Debug/UserManagement.vshost.exe.config
