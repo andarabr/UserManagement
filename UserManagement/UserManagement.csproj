@@ -35,7 +35,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.2.0.325, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.2.0\lib\net45\MaterialDesignColors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.6.0.325, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.6.0\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,6 +72,76 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controllers\ApplicationsController.cs" />
+    <Compile Include="Controllers\DepartmentsController.cs" />
+    <Compile Include="Controllers\DivisionsController.cs" />
+    <Compile Include="Controllers\LoginsController.cs" />
+    <Compile Include="Controllers\ParametersController.cs" />
+    <Compile Include="Controllers\PositionsController.cs" />
+    <Compile Include="Controllers\ProvincesController.cs" />
+    <Compile Include="Controllers\ReligionsController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
+    <Compile Include="Migrations\201907241002464_addmodulerole.cs" />
+    <Compile Include="Migrations\201907241002464_addmodulerole.Designer.cs">
+      <DependentUpon>201907241002464_addmodulerole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907250826364_addmigrations2nd.cs" />
+    <Compile Include="Migrations\201907250826364_addmigrations2nd.Designer.cs">
+      <DependentUpon>201907250826364_addmigrations2nd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907250935137_addmigrationreligion.cs" />
+    <Compile Include="Migrations\201907250935137_addmigrationreligion.Designer.cs">
+      <DependentUpon>201907250935137_addmigrationreligion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907251433184_addmigration3rd.cs" />
+    <Compile Include="Migrations\201907251433184_addmigration3rd.Designer.cs">
+      <DependentUpon>201907251433184_addmigration3rd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907260146061_position_login_application_department.cs" />
+    <Compile Include="Migrations\201907260146061_position_login_application_department.Designer.cs">
+      <DependentUpon>201907260146061_position_login_application_department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907260842111_updateforeigndivision.cs" />
+    <Compile Include="Migrations\201907260842111_updateforeigndivision.Designer.cs">
+      <DependentUpon>201907260842111_updateforeigndivision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907260944207_updateforeigndivision1.cs" />
+    <Compile Include="Migrations\201907260944207_updateforeigndivision1.Designer.cs">
+      <DependentUpon>201907260944207_updateforeigndivision1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907261104174_updateforeigndivision2.cs" />
+    <Compile Include="Migrations\201907261104174_updateforeigndivision2.Designer.cs">
+      <DependentUpon>201907261104174_updateforeigndivision2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Department.cs" />
+    <Compile Include="Repositories\ApplicationRepository.cs" />
+    <Compile Include="Repositories\DepartmentRepository.cs" />
+    <Compile Include="Repositories\DivisionRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IApplicationRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IDepartmentRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IDivisionRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ILoginRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IParameterRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IPositionRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IProvinceRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IReligionRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IRoleRepository.cs" />
+    <Compile Include="Repositories\LoginRepository.cs" />
+    <Compile Include="Repositories\ParameterRepository.cs" />
+    <Compile Include="Repositories\PositionRepository.cs" />
+    <Compile Include="Repositories\ProvinceRepository.cs" />
+    <Compile Include="Repositories\ReligionRepository.cs" />
+    <Compile Include="Repositories\RoleRepository.cs" />
+    <Compile Include="ViewModels\ApplicationVM.cs" />
+    <Compile Include="ViewModels\DepartmentVM.cs" />
+    <Compile Include="ViewModels\DivisionVM.cs" />
+    <Compile Include="ViewModels\LoginVM.cs" />
+    <Compile Include="ViewModels\ParameterVM.cs" />
+    <Compile Include="ViewModels\PositionVM.cs" />
+    <Compile Include="ViewModels\ProvinceVM.cs" />
+    <Compile Include="ViewModels\ReligionVM.cs" />
+    <Compile Include="ViewModels\RoleVM.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -63,12 +150,22 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Context\ApplicationContext.cs" />
+    <Compile Include="Core\BaseModel.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Application.cs" />
+    <Compile Include="Models\Division.cs" />
+    <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\Parameter.cs" />
+    <Compile Include="Models\Position.cs" />
+    <Compile Include="Models\Province.cs" />
+    <Compile Include="Models\Religion.cs" />
+    <Compile Include="Models\Role.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -82,10 +179,35 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\201907241002464_addmodulerole.resx">
+      <DependentUpon>201907241002464_addmodulerole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907250826364_addmigrations2nd.resx">
+      <DependentUpon>201907250826364_addmigrations2nd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907250935137_addmigrationreligion.resx">
+      <DependentUpon>201907250935137_addmigrationreligion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907251433184_addmigration3rd.resx">
+      <DependentUpon>201907251433184_addmigration3rd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907260146061_position_login_application_department.resx">
+      <DependentUpon>201907260146061_position_login_application_department.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907260842111_updateforeigndivision.resx">
+      <DependentUpon>201907260842111_updateforeigndivision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907260944207_updateforeigndivision1.resx">
+      <DependentUpon>201907260944207_updateforeigndivision1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907261104174_updateforeigndivision2.resx">
+      <DependentUpon>201907261104174_updateforeigndivision2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -93,8 +215,11 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
