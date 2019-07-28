@@ -22,7 +22,11 @@ namespace UserManagement.Context
         public DbSet<Login> Login{ get; set; }
         public DbSet<Application> Application { get; set; }
         public DbSet<Department> Department { get; set; }
+        public DbSet<Regency> Regency { get; set; }
+        public DbSet<District> District { get; set; }
 
-        
+
+
+
     }
 }

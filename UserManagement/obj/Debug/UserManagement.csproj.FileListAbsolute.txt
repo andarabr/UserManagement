@@ -11,7 +11,6 @@ C:\Users\Breygas Andara\Documents\MII Project\Git\UserManagement\UserManagement\
 C:\Users\Breygas Andara\Documents\MII Project\Git\UserManagement\UserManagement\bin\Debug\MaterialDesignColors.pdb
 C:\Users\Breygas Andara\Documents\MII Project\Git\UserManagement\UserManagement\bin\Debug\MaterialDesignThemes.Wpf.pdb
 C:\Users\Breygas Andara\Documents\MII Project\Git\UserManagement\UserManagement\bin\Debug\MaterialDesignThemes.Wpf.xml
-C:\Users\Breygas Andara\Documents\MII Project\Git\UserManagement\UserManagement\obj\Debug\UserManagement.csprojResolveAssemblyReference.cache
 C:\Users\Breygas Andara\Documents\MII Project\Git\UserManagement\UserManagement\obj\Debug\MainWindow.g.cs
 C:\Users\Breygas Andara\Documents\MII Project\Git\UserManagement\UserManagement\obj\Debug\App.g.cs
 C:\Users\Breygas Andara\Documents\MII Project\Git\UserManagement\UserManagement\obj\Debug\UserManagement_MarkupCompile.cache
@@ -24,9 +23,10 @@ C:\Users\Breygas Andara\Documents\MII Project\Git\UserManagement\UserManagement\
 C:\Users\Breygas Andara\Documents\MII Project\Git\UserManagement\UserManagement\obj\Debug\UserManagement.Migrations.addmigration3rd.resources
 C:\Users\Breygas Andara\Documents\MII Project\Git\UserManagement\UserManagement\obj\Debug\UserManagement.Migrations.position_login_application_department.resources
 C:\Users\Breygas Andara\Documents\MII Project\Git\UserManagement\UserManagement\obj\Debug\UserManagement.Migrations.updateforeigndivision.resources
+C:\Users\Breygas Andara\Documents\MII Project\Git\UserManagement\UserManagement\obj\Debug\UserManagement.Migrations.updateforeigndivision1.resources
+C:\Users\Breygas Andara\Documents\MII Project\Git\UserManagement\UserManagement\obj\Debug\UserManagement.Migrations.addmigrationregency.resources
 C:\Users\Breygas Andara\Documents\MII Project\Git\UserManagement\UserManagement\obj\Debug\UserManagement.Properties.Resources.resources
 C:\Users\Breygas Andara\Documents\MII Project\Git\UserManagement\UserManagement\obj\Debug\UserManagement.csproj.GenerateResource.Cache
 C:\Users\Breygas Andara\Documents\MII Project\Git\UserManagement\UserManagement\obj\Debug\UserManagement.exe
 C:\Users\Breygas Andara\Documents\MII Project\Git\UserManagement\UserManagement\obj\Debug\UserManagement.pdb
-C:\Users\Breygas Andara\Documents\MII Project\Git\UserManagement\UserManagement\obj\Debug\UserManagement.Migrations.updateforeigndivision1.resources
-C:\Users\Breygas Andara\Documents\MII Project\Git\UserManagement\UserManagement\obj\Debug\UserManagement.Migrations.updateforeigndivision2.resources
+C:\Users\Breygas Andara\Documents\MII Project\Git\UserManagement\UserManagement\obj\Debug\UserManagement.Migrations.addmigrationdistrict.resources
