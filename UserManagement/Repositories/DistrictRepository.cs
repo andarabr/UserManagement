@@ -58,6 +58,8 @@ namespace UserManagement.Repositories
         public bool Update(int id, DistrictVM districtVM)
         {
             var get = Get(id);
+            var getRegency = applicationContext.Regency.SingleOrDefault(x => x.IsDeleted == false && x.Id == districtVM.RegencyId);
+            get.Regency = getRegency;
             get.Update(districtVM);
             applicationContext.Entry(get).State = EntityState.Modified;
             var result = applicationContext.SaveChanges();

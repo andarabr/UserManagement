@@ -24,9 +24,9 @@ namespace UserManagement.Context
         public DbSet<Department> Department { get; set; }
         public DbSet<Regency> Regency { get; set; }
         public DbSet<District> District { get; set; }
-
-
-
-
+        public DbSet<Village> Village { get; set; }
+        public DbSet<Employee> Employee { get; set; }
+        public DbSet<LoginApplication> LoginApplication { get; set; }
+        public DbSet<Contract> Contract { get; set; }
     }
 }

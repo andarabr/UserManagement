@@ -8,21 +8,22 @@ using UserManagement.ViewModels;
 
 namespace UserManagement.Models
 {
-    public class Parameter : BaseModel
+    public class Village : BaseModel
     {
-        public Parameter() { }
+        public Village() { }
+        public string Name { get; set; }
 
-        public Parameter(ParameterVM parameterVM)
+        public District District { get; set; }
+
+        public Village(VillageVM villageVM)
         {
-            this.Name = parameterVM.Name;
-            this.Value = parameterVM.Value;
+            this.Name = villageVM.Name;
             this.CreateDate = DateTime.Now.ToLocalTime();
         }
 
-        public void Update(ParameterVM parameterVM)
+        public void Update(VillageVM villageVM)
         {
-            this.Name = parameterVM.Name;
-            this.Value = parameterVM.Value;
+            this.Name = villageVM.Name;
             this.UpdateDate = DateTime.Now.ToLocalTime();
         }
 
@@ -31,9 +32,5 @@ namespace UserManagement.Models
             this.IsDeleted = true;
             this.DeleteDate = DateTime.Now.ToLocalTime();
         }
-
-        public string Name { get; set; }
-        public string Value { get; set; }
-
     }
 }

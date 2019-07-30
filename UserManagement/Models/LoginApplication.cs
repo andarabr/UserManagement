@@ -8,21 +8,17 @@ using UserManagement.ViewModels;
 
 namespace UserManagement.Models
 {
-    public class Parameter : BaseModel
+    public class LoginApplication : BaseModel
     {
-        public Parameter() { }
+        public LoginApplication() { }
 
-        public Parameter(ParameterVM parameterVM)
+        public LoginApplication(LoginApplicationVM loginApplicationVM)
         {
-            this.Name = parameterVM.Name;
-            this.Value = parameterVM.Value;
             this.CreateDate = DateTime.Now.ToLocalTime();
         }
 
-        public void Update(ParameterVM parameterVM)
+        public void Update(LoginApplicationVM loginApplicationVM)
         {
-            this.Name = parameterVM.Name;
-            this.Value = parameterVM.Value;
             this.UpdateDate = DateTime.Now.ToLocalTime();
         }
 
@@ -32,8 +28,9 @@ namespace UserManagement.Models
             this.DeleteDate = DateTime.Now.ToLocalTime();
         }
 
-        public string Name { get; set; }
-        public string Value { get; set; }
+        public Login Login { get; set; }
+        public Application Application { get; set; }
+
 
     }
 }

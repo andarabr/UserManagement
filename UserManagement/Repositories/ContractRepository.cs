@@ -11,7 +11,7 @@ using UserManagement.ViewModels;
 
 namespace UserManagement.Repositories
 {
-    public class RegencyRepository : IRegencyRepository
+    public class ContractRepository : IContractRepository
     {
         private bool status = false;
         private ApplicationContext applicationContext = new ApplicationContext();
@@ -25,42 +25,42 @@ namespace UserManagement.Repositories
             return result > 0;
         }
 
-        public List<Regency> Get()
+        public List<Contract> Get()
         {
-            var get = applicationContext.Regency.Include("Province").Where(x => x.IsDeleted == false).ToList();
+            var get = applicationContext.Contract.Include("Employee").Where(x => x.IsDeleted == false).ToList();
             return get;
         }
 
-        public List<Regency> Get(string value)
+        public List<Contract> Get(string value)
         {
             //roles di application context class
-            var get = applicationContext.Regency.Include("Province").Where(x => (x.Name.Contains(value) || x.Id.ToString().Contains(value) || x.Province.Name.Contains(value)) && x.IsDeleted == false).ToList();
+            var get = applicationContext.Contract.Include("Employee").Where(x => (x.JoinDate.ToString().Contains(value) || x.EndDate.ToString().Contains(value) || x.Id.ToString().Contains(value) || x.Employee.Id.ToString().Contains(value)) && x.IsDeleted == false).ToList();
             return get;
         }
 
-        public Regency Get(int id)
+        public Contract Get(int id)
         {
-            var get = applicationContext.Regency.SingleOrDefault(x => x.IsDeleted == false && x.Id == id);
+            var get = applicationContext.Contract.SingleOrDefault(x => x.IsDeleted == false && x.Id == id);
             return get;
         }
 
-        public bool Insert(RegencyVM regencyVM)
+        public bool Insert(ContractVM contractVM)
         {
-            var push = new Regency(regencyVM);
+            var push = new Contract(contractVM);
             //ini nih foreign key
-            var getProvince = applicationContext.Province.SingleOrDefault(x => x.IsDeleted == false && x.Id == regencyVM.ProvinceId);
-            push.Province = getProvince;
-            applicationContext.Regency.Add(push);
+            var getEmployee = applicationContext.Employee.SingleOrDefault(x => x.IsDeleted == false && x.Id == contractVM.EmployeeId);
+            push.Employee = getEmployee;
+            applicationContext.Contract.Add(push);
             var result = applicationContext.SaveChanges();
             return result > 0;
         }
 
-        public bool Update(int id, RegencyVM regencyVM)
+        public bool Update(int id, ContractVM contractVM)
         {
             var get = Get(id);
-            var getProvince = applicationContext.Province.SingleOrDefault(x => x.IsDeleted == false && x.Id == regencyVM.ProvinceId);
-            get.Province = getProvince;
-            get.Update(regencyVM);
+            var getEmployee = applicationContext.Employee.SingleOrDefault(x => x.IsDeleted == false && x.Id == contractVM.EmployeeId);
+            get.Employee = getEmployee;
+            get.Update(contractVM);
             applicationContext.Entry(get).State = EntityState.Modified;
             var result = applicationContext.SaveChanges();
             return result > 0;

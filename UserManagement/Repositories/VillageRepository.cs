@@ -11,7 +11,7 @@ using UserManagement.ViewModels;
 
 namespace UserManagement.Repositories
 {
-    public class RegencyRepository : IRegencyRepository
+    public class VillageRepository : IVillageRepository
     {
         private bool status = false;
         private ApplicationContext applicationContext = new ApplicationContext();
@@ -25,42 +25,40 @@ namespace UserManagement.Repositories
             return result > 0;
         }
 
-        public List<Regency> Get()
+        public List<Village> Get()
         {
-            var get = applicationContext.Regency.Include("Province").Where(x => x.IsDeleted == false).ToList();
+            var get = applicationContext.Village.Include("District").Where(x => x.IsDeleted == false).ToList();
             return get;
         }
 
-        public List<Regency> Get(string value)
+        public List<Village> Get(string value)
         {
             //roles di application context class
-            var get = applicationContext.Regency.Include("Province").Where(x => (x.Name.Contains(value) || x.Id.ToString().Contains(value) || x.Province.Name.Contains(value)) && x.IsDeleted == false).ToList();
+            var get = applicationContext.Village.Include("District").Where(x => (x.Name.Contains(value) || x.Id.ToString().Contains(value) || x.District.Name.Contains(value)) && x.IsDeleted == false).ToList();
             return get;
         }
 
-        public Regency Get(int id)
+        public Village Get(int id)
         {
-            var get = applicationContext.Regency.SingleOrDefault(x => x.IsDeleted == false && x.Id == id);
+            var get = applicationContext.Village.SingleOrDefault(x => x.IsDeleted == false && x.Id == id);
             return get;
         }
 
-        public bool Insert(RegencyVM regencyVM)
+        public bool Insert(VillageVM villageVM)
         {
-            var push = new Regency(regencyVM);
+            var push = new Village(villageVM);
             //ini nih foreign key
-            var getProvince = applicationContext.Province.SingleOrDefault(x => x.IsDeleted == false && x.Id == regencyVM.ProvinceId);
-            push.Province = getProvince;
-            applicationContext.Regency.Add(push);
+            var getDistrict = applicationContext.District.SingleOrDefault(x => x.IsDeleted == false && x.Id == villageVM.DistrictId);
+            push.District = getDistrict;
+            applicationContext.Village.Add(push);
             var result = applicationContext.SaveChanges();
             return result > 0;
         }
 
-        public bool Update(int id, RegencyVM regencyVM)
+        public bool Update(int id, VillageVM villageVM)
         {
             var get = Get(id);
-            var getProvince = applicationContext.Province.SingleOrDefault(x => x.IsDeleted == false && x.Id == regencyVM.ProvinceId);
-            get.Province = getProvince;
-            get.Update(regencyVM);
+            get.Update(villageVM);
             applicationContext.Entry(get).State = EntityState.Modified;
             var result = applicationContext.SaveChanges();
             return result > 0;

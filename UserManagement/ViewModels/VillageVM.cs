@@ -6,24 +6,23 @@ using System.Threading.Tasks;
 
 namespace UserManagement.ViewModels
 {
-    public class ParameterVM
+    public class VillageVM
     {
         public string Name { get; set; }
-        public string Value { get; set; }
+        public int DistrictId { get; set; }
 
+        public VillageVM() { }
 
-        public ParameterVM() { }
-
-        public ParameterVM(string name, string value)
+        public VillageVM(string name, int districtid)
         {
             this.Name = name;
-            this.Value = value;
+            this.DistrictId = districtid;
         }
 
-        public void Update(string name, string value)
+        public void Update(string name, int districtid)
         {
             this.Name = name;
-            this.Value = value;
+            this.DistrictId = districtid;
         }
     }
 }

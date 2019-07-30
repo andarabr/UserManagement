@@ -10,7 +10,7 @@ using UserManagement.ViewModels;
 
 namespace UserManagement.Controllers
 {
-    class DepartmentsController
+    public class DepartmentsController
     {
         public IDepartmentRepository iDepartmentRepository = new DepartmentRepository();
 

@@ -58,6 +58,8 @@ namespace UserManagement.Repositories
         public bool Update(int id, DepartmentVM departmentVM)
         {
             var get = Get(id);
+            var getDivision = applicationContext.Division.SingleOrDefault(x => x.IsDeleted == false && x.Id == departmentVM.DivisionId);
+            get.Division = getDivision;
             get.Update(departmentVM);
             applicationContext.Entry(get).State = EntityState.Modified;
             var result = applicationContext.SaveChanges();

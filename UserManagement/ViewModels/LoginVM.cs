@@ -8,14 +8,16 @@ namespace UserManagement.ViewModels
 {
     public class LoginVM
     {
+        public int Id { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
 
 
         public LoginVM() { }
 
-        public LoginVM(string email, string password)
+        public LoginVM(int id, string email, string password)
         {
+            this.Id = id;
             this.Email = email;
             this.Password = password;
         }

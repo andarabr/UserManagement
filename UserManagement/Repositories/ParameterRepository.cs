@@ -34,7 +34,7 @@ namespace UserManagement.Repositories
         public List<Parameter> Get(string value)
         {
             //roles di application context class
-            var get = applicationContext.Parameter.Where(x => (x.Name.Contains(value) || Convert.ToString(x.Id).Contains(value) || x.Value.ToString().Contains(value)) && x.IsDeleted == false).ToList();
+            var get = applicationContext.Parameter.Where(x => (x.Name.Contains(value) || x.Id.ToString().Contains(value)) && x.IsDeleted == false).ToList();
             return get;
         }
 
